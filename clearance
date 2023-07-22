@@ -38,7 +38,7 @@ const IndexPage = () => {
                 key={department}
                 variant="contained"
                 color={getStatusColor(statusData[department])}
-                sx={{ mt: 1 }}
+                sx={{ mt: 2, color: 'white' }} // Increase the margin-top and set text color to white
               >
                 {department}
               </Button>

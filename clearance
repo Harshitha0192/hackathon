@@ -4,11 +4,11 @@ import { Container, Box, Typography, Button } from '@mui/material';
 const IndexPage = () => {
   const statusData = {
     IT: 'approved',
-    'Travel and Expenses': 'pending',
+    Travel and Expenses: 'pending',
     Payroll: 'rejected',
-    'GRE Team': 'approved',
-    'Corporate Travel': 'pending',
-    'Car Lease': 'rejected',
+    GRE Team: 'approved',
+    Corporate Travel: 'pending',
+    Car Lease: 'rejected',
     Logistics: 'approved',
   };
 
@@ -21,7 +21,7 @@ const IndexPage = () => {
       case 'rejected':
         return 'error';
       default:
-        return 'grey'; // Set the default color to grey
+        return 'primary'; // Use primary color as the default color
     }
   };
 
@@ -31,19 +31,17 @@ const IndexPage = () => {
         <Typography variant="h4" gutterBottom>
           Clearance Status
         </Typography>
-        <Box sx={{ border: '4px solid #000', borderRadius: '8px', p: 2, background: 'white' }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {Object.keys(statusData).map((department) => (
-              <Button
-                key={department}
-                variant="contained"
-                color={getStatusColor(statusData[department])}
-                sx={{ mt: 2, color: 'white' }} // Increase the margin-top and set text color to white
-              >
-                {department}
-              </Button>
-            ))}
-          </Box>
+        <Box sx={{ border: '1px solid #ccc', borderRadius: '8px', p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {Object.keys(statusData).map((department) => (
+            <Button
+              key={department}
+              variant="contained"
+              color={getStatusColor(statusData[department])}
+              sx={{ mt: 1, width: '100%' }} // Set width to 100% to expand the buttons to fit the box
+            >
+              {department}
+            </Button>
+          ))}
         </Box>
       </Box>
     </Container>
